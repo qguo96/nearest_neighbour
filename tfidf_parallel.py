@@ -93,10 +93,10 @@ def preprocess(data):
 
 
 filep = os.path.dirname(os.path.abspath(__file__))
-#train_file = os.path.join(filep, "NQ-open.train.jsonl")
-#dev_file = os.path.join(filep, "NQ-open.efficientqa.dev.1.1.jsonl")
-train_file = os.path.join(filep, "test_train.jsonl")
-dev_file = os.path.join(filep, "test_dev.jsonl")
+train_file = os.path.join(filep, "NQ-open.train.jsonl")
+dev_file = os.path.join(filep, "NQ-open.efficientqa.dev.1.1.jsonl")
+#train_file = os.path.join(filep, "test_train.jsonl")
+#dev_file = os.path.join(filep, "test_dev.jsonl")
 
 dev_questions = []
 dev_question_answers = []
@@ -277,6 +277,9 @@ dev_predict = [None] * len_dev
 for query_index in range(len_dev):
     #print(mdivide_rev[i].shape)
     #exit()
+    print(mdivide_rev[query_index])
+    print(mdivide_rev[query_index].argsort())
+    exit()
     nearest_index = int(mdivide_rev[query_index].argsort()[-1:][::-1])
     dev_predict[query_index] = train_question_answers[nearest_index][0]
 

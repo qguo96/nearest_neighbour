@@ -34,7 +34,7 @@ train_questions = []
 train_question_answers = []
 filep = os.path.dirname(os.path.abspath(__file__))
 #train_file = os.path.join(filep, "NQ-open.train.jsonl")
-train_file = os.path.join(filep, "cat_train.jsonl")
+train_file = os.path.join(filep, "NQ-open.train.para.jsonl")
 dev_file = os.path.join(filep, "NQ-open.efficientqa.dev.1.1.jsonl")
 
 
